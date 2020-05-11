@@ -1,5 +1,9 @@
 class ListingsController < ApplicationController
+  before_action :authenticate_user!
+  
+  before_action :set_vars, only: [:new, :create, :edit, :update]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+
 
   # GET /listings
   # GET /listings.json
@@ -69,6 +73,11 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:brand, :model, :colorway, :price, :condition)
+      params.require(:listing).permit(:brand, :model, :colorway, :price, :condition, :location_id)
     end
+
+    def set_vars
+      # @conditions = Shoe.conditions.keys
+      @locations = Location.all
+  end
 end

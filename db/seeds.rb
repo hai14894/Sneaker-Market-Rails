@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+states = ["NSW", "VIC","QLD", "WA", "TAS", "SA"]
+states.each do |name|
+    Location.create(state: name)
+    puts "#{name} created"
+end
