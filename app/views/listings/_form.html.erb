@@ -30,22 +30,18 @@
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
-
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.text_field :condition %>
-  </div>
-  <div class="field">
-     <%= form.label :location_id %>  
-    <%= form.select(:location_id, @locations.map{|l| [l.state, l.id]}) %> 
-  </div>
-  <% @conditions.each do |option| %>
+<% @conditions.each do |option| %>
     <div>
     <%= form.radio_button :condition, option %>
     <%= form.label "condition_#{option}".to_sym, option%>
     <div>
     <% end %>
-    <div class="field">
+  
+  <div class="field">
+     <%= form.label :location_id %>  
+    <%= form.select(:location_id, @locations.map{|l| [l.state, l.id]}) %> 
+  </div>
+  <div class="field">
      <%= form.label :picture %>  
     <%= form.file_field :picture, accept:'image/png,image/gif,image/jpeg,image/jpg', multiple: true %> 
   </div>
