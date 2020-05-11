@@ -77,7 +77,7 @@ class ListingsController < ApplicationController
     end
 
     def set_vars
-      # @conditions = Shoe.conditions.keys
+      @conditions = Listing.conditions.keys
       @locations = Location.all
   end
 end

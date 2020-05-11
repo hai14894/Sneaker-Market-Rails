@@ -39,6 +39,12 @@
      <%= form.label :location_id %>  
     <%= form.select(:location_id, @locations.map{|l| [l.state, l.id]}) %> 
   </div>
+  <% @conditions.each do |option| %>
+    <div>
+    <%= form.radio_button :condition, option %>
+    <%= form.label "condition_#{option}".to_sym, option%>
+    <div>
+    <% end %>
   <div class="actions">
     <%= form.submit %>
   </div>
