@@ -45,6 +45,11 @@
     <%= form.label "condition_#{option}".to_sym, option%>
     <div>
     <% end %>
+    <div class="field">
+     <%= form.label :picture %>  
+    <%= form.file_field :picture, accept:'image/png,image/gif,image/jpeg,image/jpg', multiple: true %> 
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
