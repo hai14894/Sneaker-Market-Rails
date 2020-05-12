@@ -10,3 +10,9 @@ states.each do |name|
     Location.create(state: name)
     puts "#{name} created"
 end
+
+sizes = *(4..12)
+sizes.each do |s| 
+    Size.create(size: s)
+    puts " size #{s} created"
+end

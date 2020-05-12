@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_055054) do
+ActiveRecord::Schema.define(version: 2020_05_12_110440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,13 +46,20 @@ ActiveRecord::Schema.define(version: 2020_05_11_055054) do
     t.datetime "updated_at", null: false
     t.bigint "location_id"
     t.bigint "user_id"
-    t.integer "size"
+    t.bigint "size_id"
     t.index ["location_id"], name: "index_listings_on_location_id"
+    t.index ["size_id"], name: "index_listings_on_size_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sizes", force: :cascade do |t|
+    t.integer "size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,5 +78,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_055054) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "listings", "locations"
+  add_foreign_key "listings", "sizes"
   add_foreign_key "listings", "users"
 end

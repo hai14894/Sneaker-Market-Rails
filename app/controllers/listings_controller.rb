@@ -1,6 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user!
-  
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_vars, only: [:new, :create, :edit, :update]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
@@ -79,5 +78,6 @@ class ListingsController < ApplicationController
     def set_vars
       @conditions = Listing.conditions.keys
       @locations = Location.all
+      @sizes = Size.all
   end
 end

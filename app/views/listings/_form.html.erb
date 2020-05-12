@@ -30,6 +30,10 @@
     <%= form.label :price %>
     <%= form.number_field :price %>
   </div>
+  <div class="field">
+     <%= form.label :size_id %>  
+    <%= form.select(:size_id, @sizes.map{|l| [l.size, l.id]}) %> 
+  </div>
 <% @conditions.each do |option| %>
     <div>
     <%= form.radio_button :condition, option %>
