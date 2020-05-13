@@ -37,7 +37,7 @@
 <% @conditions.each do |option| %>
     <div>
     <%= form.radio_button :condition, option %>
-    <%= form.label "condition_#{option}".to_sym, option%>
+    <%= form.label "condition_#{option}".to_sym, option, value: listing.condition%>
     <div>
     <% end %>
   

@@ -28,16 +28,12 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = current_user.listings.create(listing_params)
-
-    respond_to do |format|
-      if @listing.save
-        format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
+    
+    if @listing.errors.any?
+      render "new"
       else
-        format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      redirect_to listings_path
       end
-    end
   end
 
   # PATCH/PUT /listings/1
@@ -72,7 +68,7 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:brand, :model, :colorway, :price, :condition, :location_id, picture: [])
+      params.require(:listing).permit(:brand, :model, :colorway, :price, :condition, :location_id, :size_id,:user_id,picture: [])
     end
 
     def set_vars
