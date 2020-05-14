@@ -1,1 +1,20 @@
-Listing
+<div class="row row-cols-1 row-cols-md-4">
+<% @listings.each do |listing|%>
+    
+        <div class="card " style="width: 20rem;">
+            <%= image_tag  listing.listing_attachment ,style:"width: 20rem;"%>
+            <div class="card-body">
+                <h4 class="card-header">
+                    <%= listing.brand%>
+                </h4>
+                <h5 class="card-title mb-2">
+                    <%= listing.model%>
+                </h5>
+                <h5 class="card-subtitle">
+                    <%= listing.price%>
+                </h5>
+            </div>
+        </div>
+    
+<%end%>
+</div>

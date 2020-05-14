@@ -7,6 +7,8 @@ class Listing < ApplicationRecord
     
     validates :brand, :price,:condition, :location_id, :size_id, :picture, presence: true
    
-
+    def listing_attachment 
+        picture[0]
+    end
 
 end
