@@ -4,14 +4,14 @@ show
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    
-      <%@listing.picture.each_with_index do |p,i|%>
-      <div class="carousel-item <%= "active" if i==0 %>">
-        <%= image_tag  p %>
-         </div>
-      <%end%>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          
+            <%@listing.picture.each_with_index do |p,i|%>
+              <div class="carousel-item <%= "active" if i==0 %>">
+                <%= image_tag  p %>
+              </div>
+            <%end%>
    
     
     

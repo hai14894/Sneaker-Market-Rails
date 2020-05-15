@@ -14,6 +14,10 @@
                 $<%= listing.price%>
             </h5>
             <%= link_to  "Show", listing , class:"btn btn-primary" %>
+            <%if current_user && listing.user_id && current_user.id == listing.user_id%>
+                <%= link_to  "Edit", edit_listing_path(listing), class:"btn btn-info" %>
+                <%= link_to  "Destroy", listing,class:"btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+            <%end%>
         </div>
     </div>
     
