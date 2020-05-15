@@ -1,3 +1,10 @@
+<%# search function using ransack gem%>
+<%= search_form_for @q do |f| %>
+    <%= f.label "Find shoe:" %>
+    <%= f.search_field :brand_or_model_cont %>
+    <%= f.submit %>
+<%end%>
+<%# listings view%>
 <div class="row row-cols-1 row-cols-md-4">
 <% @listings.each do |listing|%>
     
