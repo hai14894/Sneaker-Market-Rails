@@ -19,3 +19,19 @@
 <h4>Randsack: Ruby gem that used for the search function, based on the `_cont` we give it.
 
 <h4>Bootstrap Framework: is used for styling the web application.
+
+<h3>3.1 Identify the problem you’re trying to solve by building this particular marketplace App?
+
+<h4> The shoes industry is booming and there's no platform where buyer and seller can easily buy and sell shoes. Shoes market is a platform where shoes buyer and seller can easily find the shoes they like and buy it, as well as selling the shoes they own, whether it's used or brand new.
+
+<h3>3.2 Why is the problem identified a problem that needs solving?
+
+<h4>Usually to buy and sell shoes, people have to go on social media platform or other marketplace like Gumtree or Ebay, which is not just dedicated to shoes. Since then it is time-consuming to locate the shoes people want. The Shoes Marketplace is to provide a platform  where you can find and sell the you you want , fast and easy with the search function and the transactions are secured by the website.
+
+<h3>4. Describe your project’s models in terms of the relationships (active record associations) they have with each other.
+
+<h4> A user `has_many` listings , a listing `belongs_to` user.
+<h4>  A listing `has_many_attached` pictures, a picture `belongs_to` a listing.
+<h4> A listing `belongs_to` a location, through Location table.
+<h4> A listing `belongs_to` a size, through Size table.
+
