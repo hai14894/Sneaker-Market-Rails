@@ -42,11 +42,34 @@
               sessionId: "<%= @session_id %>"
             });
           });
-      </script> <br>
-      <%= number_to_currency(@listing.price) %> <br>
+      </script> 
+
+      <div>
+      <%= number_to_currency(@listing.price) %>
+      </div>
+      
+      <div>
       <%= @listing.brand%>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem optio maxime repudiandae excepturi velit minus quas consequuntur est omnis culpa magnam, voluptate consequatur. Est enim perspiciatis minus alias libero animi.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium neque at nulla officiis alias voluptatum nobis aliquid deleniti suscipit placeat, consectetur labore commodi nesciunt iure similique eius repellendus accusamus corporis.</p>
+      </div>
+
+      <div>
+      <%= @listing.model%>
+      </div>
+      <div>
+      Size : <%= @listing.size.size%> US
+      </div>
+      <div>
+      Colorway : <%= @listing.colorway%>
+      </div>
+
+      <div>
+      Condition: <%= @listing.condition.to_s%>
+      </div>
+      <div>
+      Location : <%= @listing.location.state%>
+      </div>
+      
+      <p> <%= @listing.description%></p>
     </div>
   </div>
 
