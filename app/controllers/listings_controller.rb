@@ -7,6 +7,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
+
     @q = Listing.ransack(params[:q])
     @listings = @q.result(distinct: true)
   end
@@ -14,6 +15,27 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        customer_email: current_user.email,
+        line_items: [{
+            name: @listing.brand,
+            description: @listing.model,
+            amount: @listing.price * 100,
+            currency: 'aud',
+            quantity: 1,
+        }],
+        payment_intent_data: {
+            metadata: {
+                user_id: current_user.id,
+                listing_id: @listing.id
+            }
+        },
+        success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@listing.id}",
+        cancel_url: "#{root_url}listings"
+    )
+
+    @session_id = session.id
   end
 
   # GET /listings/new

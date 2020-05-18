@@ -27,7 +27,23 @@
 
   <div class="sidebar col-lg-4 mx-auto">
     <div class="col-12 p-3 price-container">
-      <%= @listing.price%> <br>
+      <button data-stripe="payment">Buy now </button>
+      <script src="https://js.stripe.com/v3/"></script>
+
+      <script>
+        document
+          .querySelector("[data-stripe='payment']")
+          .addEventListener("click", () => {
+            const stripe = Stripe(
+              "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+            );
+
+            stripe.redirectToCheckout({
+              sessionId: "<%= @session_id %>"
+            });
+          });
+      </script> <br>
+      <%= number_to_currency(@listing.price) %> <br>
       <%= @listing.brand%>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem optio maxime repudiandae excepturi velit minus quas consequuntur est omnis culpa magnam, voluptate consequatur. Est enim perspiciatis minus alias libero animi.</p>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium neque at nulla officiis alias voluptatum nobis aliquid deleniti suscipit placeat, consectetur labore commodi nesciunt iure similique eius repellendus accusamus corporis.</p>
