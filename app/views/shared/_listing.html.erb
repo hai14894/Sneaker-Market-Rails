@@ -1,9 +1,15 @@
 <%# search function using ransack gem%>
+<div class="container bg-transparent p-4">
 <%= search_form_for @q do |f| %>
-    <%= f.label "Find shoe:" %>
+    
+    <h5><%= f.label "Find shoe:" %></h5>
     <%= f.search_field :brand_or_model_cont %>
-    <%= f.submit %>
+    <%= f.submit "Search",  class: "btn btn-outline-success" %>
+   
+
 <%end%>
+</div>
+
 <%# listings view%>
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 m-5">
