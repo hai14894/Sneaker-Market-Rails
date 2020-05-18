@@ -35,3 +35,4 @@
 <h4> A listing `belongs_to` a location, through Location table.
 <h4> A listing `belongs_to` a size, through Size table.
 
+
