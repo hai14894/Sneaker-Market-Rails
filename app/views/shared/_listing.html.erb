@@ -20,29 +20,29 @@
 
 <%# listings view%>
 
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 m-5">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 m-5">
 <% @listings.each do |listing|%>
-    
-    <div class="card">
-        <%= image_tag  listing.listing_attachment ,style:"width: 25rem;"%>
-        <div class="card-body">
-            <h4 class="card-title">
-                <%= listing.brand%>
-            </h4>
-            <h5 class="card-title mb-2">
-                <%= listing.model%>
-            </h5>
-            <h5 class="card-subtitle">
-                $<%= listing.price%>
-            </h5>
-            <%= link_to  "Show", listing , class:"btn btn-outline-primary" %>
-            <%if current_user.id == listing.user_id%>
-                <%= link_to  "Edit", edit_listing_path(listing), class:"btn btn-outline-info" %>
-                <%= link_to  "Destroy", listing,class:"btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-            <%end%>
+    <div class="col">
+        <div class="card">
+            <%= image_tag  listing.listing_attachment ,style:"width: 100%"%>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <%= listing.brand%>
+                </h4>
+                <h5 class="card-title mb-2">
+                    <%= listing.model%>
+                </h5>
+                <h5 class="card-subtitle">
+                    $<%= listing.price%>
+                </h5>
+                <%= link_to  "Show", listing , class:"btn btn-outline-primary" %>
+                <%if current_user.id == listing.user_id%>
+                    <%= link_to  "Edit", edit_listing_path(listing), class:"btn btn-outline-info" %>
+                    <%= link_to  "Delete", listing,class:"btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+                <%end%>
+            </div>
         </div>
     </div>
-    
 <%end%>
 </div>
 <>

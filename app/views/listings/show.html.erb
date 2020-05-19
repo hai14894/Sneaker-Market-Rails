@@ -27,9 +27,9 @@
 
   <div class="sidebar col-lg-4 mx-auto">
   
-    <div class="col-12 p-3 price-container">
+    <div class="col-12 p-3 container">
        <%if current_user.id != @listing.user_id%>
-      <button data-stripe="payment", class="buy-btn btn-outline-success"><h4>Buy now </h4></button>
+      <button data-stripe="payment", class="buy-btn btn-outline-success"><h4>Check out </h4></button>
       <script src="https://js.stripe.com/v3/"></script>
 
       <script>
@@ -49,12 +49,12 @@
 
       <div>
       <%= number_to_currency(@listing.price) %>
-      </div>
-      
+      </div> <br>
+      <h4>Details</h4>
       <div>
       <%= @listing.brand%> <%= @listing.model%>
       </div>
-
+      
       <div>
       Size <%= @listing.size.size%> US - <%= @listing.condition ? "New" : "Used"%>
       </div>
