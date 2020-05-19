@@ -27,7 +27,7 @@
 
   <div class="sidebar col-lg-4 mx-auto">
     <div class="col-12 p-3 price-container">
-      <button data-stripe="payment">Buy now </button>
+      <button data-stripe="payment", class="buy-btn"><h4>Buy now </h4></button>
       <script src="https://js.stripe.com/v3/"></script>
 
       <script>
@@ -49,14 +49,11 @@
       </div>
       
       <div>
-      <%= @listing.brand%>
+      <%= @listing.brand%> <%= @listing.model%>
       </div>
 
       <div>
-      <%= @listing.model%>
-      </div>
-      <div>
-      Size : <%= @listing.size.size%> US
+      Size <%= @listing.size.size%> US
       </div>
       <div>
       Colorway : <%= @listing.colorway%>
