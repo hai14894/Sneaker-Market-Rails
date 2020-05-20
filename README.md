@@ -4,6 +4,9 @@
 
 <h2>Shoes market- Ruby on Rails two-sided marketplace application
 
+<h3>Deployed app: https://shoes-market-x.herokuapp.com/
+<h3>GitHub : https://github.com/hai14894/Sneaker-Market-Rails
+
 <h3>1.Explain the different high-level components (abstractions) in your App.
 
 <h4>Shoes market is a two-sided marketplace application that was built using Ruby on Rails framework and architected using MVC (Model, View, Controller) where the View with minimal logic display user interface in the front-end. In the back-end,Controller accepts user input and converts it to commands for the Model or View. Model manages the data, logic and rules of the application, which Postgresql is the data base of choice.
