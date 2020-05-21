@@ -43,11 +43,33 @@
 <h3>6. Provide your database schema design.
 
 <h3>7. Provide User stories for your App.
+<h4>User management: 
+<p>As a site visitor, I want to be able to create an account in order to become a buyer and seller.
+<p>As a buyer or seller, I want to be able to log in and log out of my account at any time.
+<p>As a buyer or seller, I want to be able to edit my account password.
+<p>As a buyer or seller, I want to be able to delete my account if i don't  want to use the app anymore.
+<h4>Listing management:
+<p>As a site visitor, I want to be able to see all the listings without logging in.
+<p>As a seller, I want to be able to create listings in order to sell my shoes.
+<p>As a seller, I want to be able to upload multiple pictures to my listings.
+<p>As a seller, I want to be able to show, edit and delete my listings.
+<p>As a buyer, I want to be able to search for shoes with the brand or model i am looking for.
+<p>As a buyer, I want to be able to show the details of listing.
+<h4>Authentication & Authorisation:
+<p>As a buyer or seller, I do not want other users to be able to access my account.
+<p>As a seller, I do not want other users to be able to edit or delete my listings.
+<p>As a seller, I do not want to see options to buy my listings.
 
 <h3>8. Provide Wireframes for your App.
+![homepage](./docs/home_page.png)
+![index page](./docs/index_page.png)
+![new form](./docs/new_form.png)
+![profile page](./docs/profile_page.png)
+![show page](./docs/show_page.png)
 
 <h3>9. Describe the way tasks are planned and tracked in your project.
 
 <h3>10. ERD provided represents a normalised database model.
+![erd](./docs/shoes-market-erd.png)
 
 
