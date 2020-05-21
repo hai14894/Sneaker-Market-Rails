@@ -58,7 +58,7 @@
 <h4>Authentication & Authorisation:
 <p>As a buyer or seller, I do not want other users to be able to access my account.
 <p>As a seller, I do not want other users to be able to edit or delete my listings.
-<p>As a seller, I do not want to see options to buy my listings.
+<pdocs>As a seller, I do not want to see options to buy my listings.
 
 <h3>8. Provide Wireframes for your App.
 ![homepage](./docs/home_page.png)
