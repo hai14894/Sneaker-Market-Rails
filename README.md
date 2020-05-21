@@ -70,6 +70,6 @@
 <h3>9. Describe the way tasks are planned and tracked in your project.
 
 <h3>10. ERD provided represents a normalised database model.
-![erd](./docs/shoes-market-erd.png)
+![shoes-market-erd](/Users/haiden/Sneaker-Market-Rails/docs/shoes-market-erd.png)
 
 
